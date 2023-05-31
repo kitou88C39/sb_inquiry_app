@@ -17,6 +17,12 @@ public class InquiryController {
         return "inquiry/form";
     }
 
+    @PostMapping("/form")
+    public String formGoBack(InquiryForm inquiryForm, Model model) {
+        model.addAttribute("title", "Inquiry Form");
+        return "inquiry/form";
+    }
+
     @GetMapping("/confirm")
     public String confirm(@Validated InquiryForm inquiryForm, BindingResult result, Model model) {
         if (result.hasErrors()) {
